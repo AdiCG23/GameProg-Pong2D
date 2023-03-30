@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int WinScore = 10;
 
     public BallControls BallControl;
+    public Transform LeftPlayer;
+    public Transform RightPlayer;
 
     [Header("UI")]
 
@@ -84,6 +86,8 @@ public class GameManager : MonoBehaviour
         txtPlayerScoreR.text = PlayerScoreR.ToString();
         BallControl.Invoke(nameof(BallControl.GoBall), 1.0f);
         PanelWinScreen.SetActive(false);
+        LeftPlayer.position = new Vector2(LeftPlayer.position.x,0);
+        RightPlayer.position = new Vector2(RightPlayer.position.x, 0);
     }
 
 }
